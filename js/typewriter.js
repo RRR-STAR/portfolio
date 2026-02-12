@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded',function(event){
     
     // array with texts to type in typewriter
     var dataText = [
-        "Modern C++ Developer",
+        "Modern C++ Programming",
         "Object Oriented Programming",
-        "Game Devlopment",
-        "Python Programmer",
+        "Game Development",
+        "Python Programming",
         "MySQL & DBMS",
         "Operating Systems",
         "Software Engineering",
