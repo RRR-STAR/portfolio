@@ -1,1 +1,98 @@
-document.addEventListener("DOMContentLoaded", function () { new SweetScroll({}); particlesJS("particles-js", { particles: { number: { value: 60, density: { enable: !0, value_area: 800 } }, color: { value: "#3d67a5" }, shape: { type: "star", stroke: { width: 2, color: "#ed092b" }, polygon: { nb_sides: 5 }, image: { src: "img/github.svg", width: 100, height: 100 } }, opacity: { value: .6, random: !1, anim: { enable: true, speed: 3, opacity_min: .2, sync: !1 } }, size: { value: 4, random: true, anim: { enable: !1, speed: 21.18081918081918, size_min: .1, sync: !1 } }, line_linked: { enable: !0, distance: 150, color: "#ffffff", opacity: .4, width: 1 }, move: { enable: !0, speed: 6, direction: "none", random: !0, straight: !1, out_mode: "out", bounce: !1, attract: { enable: !1, rotateX: 600, rotateY: 1200 } }, nb: 80 }, interactivity: { detect_on: "canvas", events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "bubble" }, resize: !0 }, modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 20, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: .4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } } }, retina_detect: !0 }) }, !1);
+(function () {
+  "use strict";
+
+  function getReduceMotionPreference() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function initNavbarScrollState() {
+    var setState = function () {
+      if (window.scrollY > 14) {
+        document.body.classList.add("nav-scrolled");
+      } else {
+        document.body.classList.remove("nav-scrolled");
+      }
+    };
+
+    setState();
+    window.addEventListener("scroll", setState, { passive: true });
+  }
+
+  function initRevealAnimations(reduceMotion) {
+    var revealTargets = document.querySelectorAll(
+      ".home-header, .myAvtar, .home-about-description, .home-about-social, .quote-card-view, .about-img, .tech-icons, .project-heading, .user-projects, .resume .resume-item"
+    );
+
+    if (!revealTargets.length) {
+      return;
+    }
+
+    revealTargets.forEach(function (el, index) {
+      el.classList.add("reveal");
+      el.style.setProperty("--reveal-delay", Math.min(index * 65, 680) + "ms");
+    });
+
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      revealTargets.forEach(function (el) {
+        el.classList.add("in-view");
+      });
+      return;
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "0px 0px -60px 0px",
+      }
+    );
+
+    revealTargets.forEach(function (el) {
+      observer.observe(el);
+    });
+  }
+
+  function initInteractiveGlow(reduceMotion) {
+    if (reduceMotion) {
+      return;
+    }
+
+    var glowTargets = document.querySelectorAll(".user-projects, .resume .resume-item, .quote-card-view, .tech-icons");
+
+    glowTargets.forEach(function (target) {
+      target.addEventListener("pointermove", function (event) {
+        var rect = target.getBoundingClientRect();
+        target.style.setProperty("--mx", event.clientX - rect.left + "px");
+        target.style.setProperty("--my", event.clientY - rect.top + "px");
+      });
+
+      target.addEventListener("pointerleave", function () {
+        target.style.removeProperty("--mx");
+        target.style.removeProperty("--my");
+      });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var reduceMotion = getReduceMotionPreference();
+
+    if (window.SweetScroll) {
+      new SweetScroll({
+        easing: "easeOutQuint",
+        speed: 680,
+        updateURL: false,
+      });
+    }
+
+    initNavbarScrollState();
+    initRevealAnimations(reduceMotion);
+    initInteractiveGlow(reduceMotion);
+  });
+})();
