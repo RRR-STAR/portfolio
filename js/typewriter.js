@@ -1,48 +1,59 @@
-document.addEventListener('DOMContentLoaded',function(event){
+// Typewriter effect — targets #typewriter element
+(function() {
+  var dataText = [
+    'Modern C++ Programming',
+    'Object Oriented Programming',
+    'Game Development',
+    'Python Programming',
+    'MySQL & DBMS',
+    'Operating Systems',
+    'Software Engineering',
+  ];
+
+  var el = null;
+  var textIndex = 0;
+  var charIndex = 0;
+  var isDeleting = false;
+  var typeSpeed = 60;
+  var deleteSpeed = 35;
+  var pauseEnd = 1800;
+  var pauseStart = 400;
+
+  function tick() {
+    if (!el) return;
+
+    var currentText = dataText[textIndex];
     
-    // array with texts to type in typewriter
-    var dataText = [
-        "Modern C++ Programming",
-        "Object Oriented Programming",
-        "Game Development",
-        "Python Programming",
-        "MySQL & DBMS",
-        "Operating Systems",
-        "Software Engineering",
-    ];
-    
-    // type one text in the typwriter
-    // keeps calling itself until the text is finished
-    function typeWriter(text, i, fnCallback) {
-        
-        // chekc if text isn't finished yet
-        if (i < (text.length)) {
-            
-            // add next character to h1
-            document.querySelector("h2").innerHTML = "<i>" + text.substring(0, i+1) + " ></i>";
-            
-            // wait for a while and call this function again for next character
-            setTimeout(function(){ typeWriter(text, i + 1, fnCallback) }, 50);
-        }
-        // text finished, call callback if there is a callback function
-        else if (typeof fnCallback == 'function') { // call callback after timeout
-            setTimeout(fnCallback, 1500);
-        }
+    if (isDeleting) {
+      charIndex--;
+      el.textContent = currentText.substring(0, charIndex);
+    } else {
+      charIndex++;
+      el.textContent = currentText.substring(0, charIndex);
     }
-    
-    // start a typewriter animation for a text in the dataText array
-    function StartTextAnimation(i) {
-        
-        if (typeof dataText[i] == 'undefined'){
-            setTimeout(function(){ StartTextAnimation(0); }, 300);
-        }
-        // check if dataText[i] exists
-        if (i < dataText[i].length){
-            // text exists! start typewriter animation
-            // after callback (and whole text has been animated), start next text
-            typeWriter(dataText[i], 0, function(){ StartTextAnimation(i + 1); });
-        }
+
+    var delay = isDeleting ? deleteSpeed : typeSpeed;
+
+    if (!isDeleting && charIndex === currentText.length) {
+      delay = pauseEnd;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      textIndex = (textIndex + 1) % dataText.length;
+      delay = pauseStart;
     }
-    // start the text animation
-    StartTextAnimation(0);
-});
+
+    setTimeout(tick, delay);
+  }
+
+  function init() {
+    el = document.getElementById('typewriter');
+    if (el) tick();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

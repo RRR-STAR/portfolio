@@ -5,175 +5,590 @@
   <meta charset="utf-8" />
   <link rel="icon" href="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
-  <link rel="manifest" href="manifest.json" />
-  <title>S.M.R | Portfolio</title>
-  <meta name="description" content="Personal website of SK MD RAIHAN">
+  <meta name="theme-color" content="#0a0e1a" />
+  <title>S.M.R | Portfolio — SK MD RAIHAN</title>
+  <meta name="description" content="Personal portfolio of SK MD RAIHAN — C++ Developer, Game Developer, and MCA student at Jadavpur University.">
 
   <!-- Google / Search Engine Tags -->
   <meta itemprop="name" content="S.M.R | Portfolio">
-  <meta itemprop="description" content="Personal website of SK MD RAIHAN">
-  <meta itemprop="image"
-    content="">
+  <meta itemprop="description" content="Personal portfolio of SK MD RAIHAN — C++ Developer, Game Developer, and MCA student at Jadavpur University.">
 
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="">
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="S.M.R | Portfolio">
-  <meta property="og:description" content="Personal website of SK MD RAIHAN">
-  <meta property="og:image"
-    content="">
-  
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+  <meta property="og:description" content="Personal portfolio of SK MD RAIHAN — C++ Developer, Game Developer, and MCA student at Jadavpur University.">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/all.min.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 
 <body>
-  <nav class="container navbar sticky sticky-top navbar-expand-xl">
-    <a class="navbar-brand" href="#"> S.M.R </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler span"></span>
+
+  <!-- Animated Background Orbs -->
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <div class="bg-orb bg-orb-3"></div>
+
+  <!-- Particle Background Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <a href="#hero" class="nav-brand">S.M.R</a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item-active"><a class="nav-link" href="#"><i class="fas fa-home"></i> Home </a></li>
-      <li class="nav-item"><a class="nav-link" href="about.html"><i class="far fa-user"></i> About </a></li>
-      <li class="nav-item"><a class="nav-link" href="projects.html"><i class="fab fa-codepen"></i> Projects </a></li>
-      <li class="nav-item"><a class="nav-link" href="resume.html"><i class="far fa-file-alt"></i> Resume </a> </li>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero" class="active"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#about"><i class="far fa-user"></i> About</a></li>
+      <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+      <li><a href="#projects"><i class="fab fa-codepen"></i> Projects</a></li>
+      <li><a href="#resume"><i class="far fa-file-alt"></i> Resume</a></li>
     </ul>
-  </div>
   </nav>
-  <section class="mt-0">
-    <div class="container-fluid home-section" id="home">
-      <Particle />
-      <div class="container home-content">
-        <div class="row">
-          <div class="col-md-1"></div>
-          <div class="home-header col-md-7">
-            <h1 style="padding-bottom: 10; color: white;" class="heading">
-              Hi There ! <span class="wave">👋🏻</span>
-            </h1>
-            <h3 class="heading" style="color: wheat;"><script language = "javascript" src="js/greet.js">
-            </script></h3>
-            <h1 class="heading-name" style="color: aliceblue;">
-              I'M <strong class="main-name"> SK MD RAIHAN </strong>
-            </h1>
-            <h6 class="sub-heading-name" style="color: aliceblue;">
-              You can call me, <strong class="main-name"> Rehan </strong>
-            </h6><br>
-            <div style="text-align: left; padding: 50;">
-              <h2 class="heading Typewriter__wrapper"><script language = "javascript"  src="js/typewriter.js">
-              </script></h2>
-              <br><br><br>
-            </div>
-          </div>
-          <div class="col-md-4" style="padding-bottom: 20">
-            <img src="img/home-main.svg" alt="home pic" class="img-fluid" />
-          </div>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">
+          <span id="greeting-text"></span> <span class="wave">👋🏻</span>
+        </p>
+        <h1 class="hero-name">
+          I'm <span class="highlight">SK MD RAIHAN</span>
+        </h1>
+        <p class="hero-subtitle">
+          You can call me, <strong>Rehan</strong>
+        </p>
+        <div class="hero-typewriter-wrapper">
+          <span class="hero-typewriter">
+            <span id="typewriter"></span><span class="cursor"></span>
+          </span>
         </div>
-        <br>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fab fa-codepen"></i> View Projects
+          </a>
+          <a href="files/simple resume 2.pdf" target="_blank" class="btn btn-outline">
+            <i class="fas fa-download"></i> Download CV
+          </a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-image-wrapper">
+          <div class="hero-image-glow"></div>
+          <div class="hero-orbit"></div>
+          <img src="img/home-main.svg" alt="Developer illustration" />
+        </div>
       </div>
     </div>
-    <div class="Container-fluid home-about-section" id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 home-about-description">
-            <h1 style="font-Size: 2.6em; color: white;">
-              LET ME <span class="purple"> INTRODUCE </span> MYSELF
-            </h1>
-            <p class="home-about-body">
-              I love to do programming and after spending <br> 2+ years, I have at least learnt
-              something,<br> I think… 🤷‍♂️
-              <br>
-              <br> 
-              I am fluent in classics like 
-              <b class="purple"> C , C++ , Python , MySQL </b>
-              <br>
-              <br>
-              I am also quite good at using AI tools like <br>
-              <b class="purple"> Github Co-pilot </b>
-              with 
-              <b class="purple"> VS Code , Gemini CLI </b>
-              <br>
-              <br>
-              I have developed Games and Websites with <br>
-              <b class="purple"> C++ </b>
-              and its 
-              <b class="purple"> Frameworks </b>
-              like 
-              <b class="purple"> SFML , WT. </b>
-            </p>
-          </div>
-          <div class="col-md-4 myAvtar">
-            <Tilt>
-              <img src="img/anime_avatar_animation.gif" class="img-fluid" alt="img/avatar2.png" />
-            </Tilt>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-label">Get to know me</span>
+        <h2 class="section-title">Let Me <span class="gradient-text">Introduce</span> Myself</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal-left">
+          <h2>Know Who <span class="gradient-text">I'm</span></h2>
+          <p>
+            Hi Everyone! I'm <span class="highlight">Rehan</span> from
+            <span class="highlight">Durgapur, West Bengal, India</span>.
+          </p>
+          <p>
+            I have completed my <em>BCA</em> from <em>Maulana Abul Kalam Azad University of Technology (M.A.K.A.U.T)</em>,
+            and currently pursuing <em>MCA</em> from <em>Jadavpur University (J.U)</em>.
+          </p>
+          <p>
+            I love programming and after spending 2+ years, I have at least learnt something, I think… 🤷‍♂️
+          </p>
+          <p>
+            I am fluent in <span class="highlight">C, C++, Python, MySQL</span> and skilled with
+            AI tools like <span class="highlight">GitHub Copilot, VS Code, Gemini CLI</span>.
+            I've also built Games and Websites with <span class="highlight">C++ frameworks like SFML & Wt</span>.
+          </p>
+
+          <p style="margin-top: 1rem; font-weight: 600; color: var(--text-primary);">Apart from coding, I also love:</p>
+          <ul class="about-activities">
+            <li><i class="fas fa-chevron-right"></i> Testing & Playing with different AI tools</li>
+            <li><i class="fas fa-chevron-right"></i> Exploring the web & different technologies</li>
+            <li><i class="fas fa-chevron-right"></i> Playing Volleyball and Carrom</li>
+          </ul>
+
+          <div class="about-quote">
+            <p>"The secret of getting ahead is getting started."</p>
+            <span class="quote-author">— Raihan</span>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12 home-about-social">
-            <h1 style="color: white;"> FIND ME ON </h1>
-            <p> Feel free to <span class="purple"> connect </span> with me </p>
-            <ul class="home-about-social-links">
-              <li class="social-icons">
-                <a
-                  href="https://github.com/RRR-STAR"
-                  target="_blank"
-                  rel="noreferrer"
-                  class="icon-colour  home-social-icons"
-                >
-                  <i class="fab fa-github"></i>
-                </a>
-              </li>
-              <li class="social-icons">
-                <a
-                  href="https://wa.me/918293602005"
-                  target="_blank"
-                  rel="noreferrer"
-                  class="icon-colour  home-social-icons"
-                >
-                  <i class="fab fa-whatsapp"></i>
-                </a>
-              </li>
-              <li class="social-icons">
-                <a
-                  href="mailto: skmdraihan58@gmail.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  class="icon-colour  home-social-icons"
-                >
-                  <i class="fas fa-envelope"></i>
-                </a>
-              </li>
-              <li class="social-icons">
-                <a
-                  href="https://www.linkedin.com/in/sk-md-raihan"
-                  target="_blank"
-                  rel="noreferrer"
-                  class="icon-colour  home-social-icons"
-                >
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
+
+        <div class="about-image-container reveal-right">
+          <div class="about-image-wrapper">
+            <img src="img/anime_avatar_animation.gif" alt="Avatar of Rehan" />
+            <div class="about-image-decoration"></div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-label">What I work with</span>
+        <h2 class="section-title">Professional <span class="gradient-text">Skillsets</span></h2>
+      </div>
+
+      <div class="skills-category reveal">
+        <h3 class="skills-category-title">Languages & Technologies</h3>
+        <div class="skills-grid stagger-children">
+          <div class="skill-card reveal-scale" style="--i:0">
+            <i class="devicon-c-plain"></i>
+            <span>C</span>
+          </div>
+          <div class="skill-card reveal-scale" style="--i:1">
+            <i class="devicon-cplusplus-plain"></i>
+            <span>C++</span>
+          </div>
+          <div class="skill-card reveal-scale" style="--i:2">
+            <i class="devicon-python-plain"></i>
+            <span>Python</span>
+          </div>
+          <div class="skill-card reveal-scale" style="--i:3">
+            <i class="devicon-mysql-plain"></i>
+            <span>MySQL</span>
+          </div>
+          <div class="skill-card reveal-scale" style="--i:4">
+            <i class="devicon-html5-plain"></i>
+            <span>HTML5</span>
+          </div>
+          <div class="skill-card reveal-scale" style="--i:5">
+            <i class="devicon-css3-plain"></i>
+            <span>CSS3</span>
+          </div>
+          <div class="skill-card reveal-scale" style="--i:6">
+            <i class="devicon-php-plain"></i>
+            <span>PHP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-category reveal">
+        <h3 class="skills-category-title">Tools I Use</h3>
+        <div class="skills-grid stagger-children">
+          <div class="skill-card reveal-scale" style="--i:0">
+            <i class="devicon-vscode-plain"></i>
+            <span>VS Code</span>
+          </div>
+          <div class="skill-card reveal-scale" style="--i:1">
+            <i class="devicon-git-plain"></i>
+            <span>Git</span>
+          </div>
+          <div class="skill-card reveal-scale" style="--i:2">
+            <i class="devicon-github-original"></i>
+            <span>GitHub</span>
+          </div>
+          <div class="skill-card reveal-scale" style="--i:3">
+            <i class="devicon-linux-plain"></i>
+            <span>Linux</span>
+          </div>
+          <div class="skill-card reveal-scale" style="--i:4">
+            <i class="devicon-windows11-original"></i>
+            <span>Windows</span>
+          </div>
+          <div class="skill-card reveal-scale" style="--i:5">
+            <i class="devicon-bash-plain"></i>
+            <span>Bash</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-label">My work</span>
+        <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
+        <p style="color: var(--text-secondary); margin-top: 1rem;">Here are a few projects I've worked on.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: OS Process Scheduling Solver -->
+        <div class="project-card reveal-scale">
+          <div class="project-card-image">
+            <img src="img/OSProcessShedulingSolver.png" alt="OS Process Scheduling Solver">
+            <div class="project-card-overlay"></div>
+          </div>
+          <div class="project-card-body">
+            <h3 class="project-card-title">OS Process Scheduling Solver</h3>
+            <div class="project-card-tech">
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">Wt Framework</span>
+            </div>
+            <p class="project-card-desc">
+              A web-based process scheduling solver that ensures precise calculations and generates 
+              Gantt charts and result statistics. Gives users visual representation of process execution 
+              and helps understand how results are derived. Hosted on Render.
+            </p>
+            <div class="project-card-links">
+              <a href="https://processschedulingsolver-wt-v2.onrender.com/" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              <a href="https://github.com/RRR-STAR/ProcessSchedulingSolver_wt_v2" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: E-Commerce Book Store -->
+        <div class="project-card reveal-scale">
+          <div class="project-card-image">
+            <img src="img/bookstore-project.png" alt="E-Commerce Book Store">
+            <div class="project-card-overlay"></div>
+          </div>
+          <div class="project-card-body">
+            <h3 class="project-card-title">E-Commerce Book Store (Group)</h3>
+            <div class="project-card-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">MySQL</span>
+            </div>
+            <p class="project-card-desc">
+              A simple E-Commerce Book Store website for ordering books online. Developed as a college 
+              group project. I managed DB creation, PHP-database communication, and data sharing 
+              through HTTP methods.
+            </p>
+            <div class="project-card-links">
+              <a href="https://smr.wuaze.com/e-com-bookstore" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              <a href="https://github.com/RRR-STAR/ECom-Book-Store" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Book Shop Management System -->
+        <div class="project-card reveal-scale">
+          <div class="project-card-image">
+            <img src="img/BookShopManagementSystem_.jpg" alt="Book Shop Management System">
+            <div class="project-card-overlay"></div>
+          </div>
+          <div class="project-card-body">
+            <h3 class="project-card-title">Book Shop Management System</h3>
+            <div class="project-card-tech">
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">OOP</span>
+            </div>
+            <p class="project-card-desc">
+              A desktop CLI app for automating bookshop operations including inventory control, 
+              customer and supplier management. Designed to improve operational efficiency and 
+              reduce manual effort.
+            </p>
+            <div class="project-card-links">
+              <a href="https://github.com/RRR-STAR/PROJECTS/blob/main/C%2B%2B%20Projects/Book%20Shop%20Management%20System" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Match The Gems Game -->
+        <div class="project-card reveal-scale">
+          <div class="project-card-image">
+            <img src="img/matchgems.png" alt="Match The Gems Game">
+            <div class="project-card-overlay"></div>
+          </div>
+          <div class="project-card-body">
+            <h3 class="project-card-title">Match The Gems Game</h3>
+            <div class="project-card-tech">
+              <span class="tech-tag">C++11</span>
+              <span class="tech-tag">SFML</span>
+            </div>
+            <p class="project-card-desc">
+              A fun match-3 gems game with smooth animations, bright gems that slide and match 
+              perfectly, live score updates, and responsive screen scaling. All animations are 
+              implemented through coding logic with math concepts.
+            </p>
+            <div class="project-card-links">
+              <a href="https://github.com/RRR-STAR/Games/tree/main/Match%203%20Gems%20Game" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://rrr-star.github.io/Games/" target="_blank" class="project-link">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Arkanoid Game -->
+        <div class="project-card reveal-scale">
+          <div class="project-card-image">
+            <img src="img/arkanoid.png" alt="Arkanoid Game">
+            <div class="project-card-overlay"></div>
+          </div>
+          <div class="project-card-body">
+            <h3 class="project-card-title">Arkanoid Game</h3>
+            <div class="project-card-tech">
+              <span class="tech-tag">C++11</span>
+              <span class="tech-tag">SFML</span>
+            </div>
+            <p class="project-card-desc">
+              A classic Arkanoid game with high-quality visuals that brings a twist to the classic 
+              gameplay. Smoother graphics create a more engaging gameplay experience.
+            </p>
+            <div class="project-card-links">
+              <a href="https://github.com/RRR-STAR/Games/tree/main/Arkanoid%20Game" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://rrr-star.github.io/Games/" target="_blank" class="project-link">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Tetris Game -->
+        <div class="project-card reveal-scale">
+          <div class="project-card-image">
+            <img src="img/tetris.png" alt="Tetris Game">
+            <div class="project-card-overlay"></div>
+          </div>
+          <div class="project-card-body">
+            <h3 class="project-card-title">Tetris Game</h3>
+            <div class="project-card-tech">
+              <span class="tech-tag">C++11</span>
+              <span class="tech-tag">SFML</span>
+            </div>
+            <p class="project-card-desc">
+              Seamless functionality and high-quality visuals. Features random tile generation 
+              ensuring a unique and challenging experience every time. Tiles rotate and align 
+              perfectly with smooth functionality.
+            </p>
+            <div class="project-card-links">
+              <a href="https://github.com/RRR-STAR/Games/tree/main/Tetris%20Game" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://rrr-star.github.io/Games/" target="_blank" class="project-link">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7: Asteroid Game -->
+        <div class="project-card reveal-scale">
+          <div class="project-card-image">
+            <img src="img/asteroid.png" alt="Asteroid Game">
+            <div class="project-card-overlay"></div>
+          </div>
+          <div class="project-card-body">
+            <h3 class="project-card-title">Asteroid Game</h3>
+            <div class="project-card-tech">
+              <span class="tech-tag">C++11</span>
+              <span class="tech-tag">SFML</span>
+            </div>
+            <p class="project-card-desc">
+              A classic arcade-style game where you control a spaceship navigating through moving 
+              asteroids. Features smooth thrust mechanics, shooting, explosions, and dynamic 
+              asteroid splitting.
+            </p>
+            <div class="project-card-links">
+              <a href="https://github.com/RRR-STAR/asteroid" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://rrr-star.github.io/asteroid" target="_blank" class="project-link">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8: Word Guesser -->
+        <div class="project-card reveal-scale">
+          <div class="project-card-image">
+            <img src="img/word-guesser.png" alt="Word Guesser Application">
+            <div class="project-card-overlay"></div>
+          </div>
+          <div class="project-card-body">
+            <h3 class="project-card-title">Word Guesser Application</h3>
+            <div class="project-card-tech">
+              <span class="tech-tag">C++</span>
+            </div>
+            <p class="project-card-desc">
+              A CLI-based application that can guess the word you're thinking of based on your 
+              hints. Built using matrix math concepts — hints are processed through a matrix to 
+              generate the final result.
+            </p>
+            <div class="project-card-links">
+              <a href="https://github.com/RRR-STAR/All-PROJECTS/tree/main/C%2B%2B%20Projects/Word%20Guesser%20Application" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 9: Portfolio Website Template -->
+        <div class="project-card reveal-scale">
+          <div class="project-card-image">
+            <img src="img/SimplePortfolioTemplateWebsite.jpg" alt="Portfolio Website Template">
+            <div class="project-card-overlay"></div>
+          </div>
+          <div class="project-card-body">
+            <h3 class="project-card-title">Portfolio Website Template</h3>
+            <div class="project-card-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+            <p class="project-card-desc">
+              A single-page portfolio website made using basic HTML, CSS, and JavaScript.
+            </p>
+            <div class="project-card-links">
+              <a href="https://rrr-star.github.io/Single-Page-Portfolio-Website" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              <a href="https://github.com/RRR-STAR/Single-Page-Portfolio-Website" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESUME SECTION ===== -->
+  <section id="resume">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-label">My journey</span>
+        <h2 class="section-title">Education & <span class="gradient-text">Achievements</span></h2>
+      </div>
+
+      <div class="resume-grid">
+        <!-- Education Timeline -->
+        <div class="reveal-left">
+          <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1.5rem;">
+            <span class="gradient-text">Education</span>
+          </h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h4>Master of Computer Applications (J.U)</h4>
+              <div class="timeline-date">2025 — 2027</div>
+              <div class="timeline-detail">Jadavpur University</div>
+            </div>
+            <div class="timeline-item">
+              <h4>Bachelor of Computer Applications (B.C.E.T)</h4>
+              <div class="timeline-date">2022 — 2025</div>
+              <div class="timeline-detail">CGPA: 8.2</div>
+            </div>
+            <div class="timeline-item">
+              <h4>12th Board — Vivekananda Bidyapith</h4>
+              <div class="timeline-date">2020 — 2022</div>
+              <div class="timeline-detail">79.0% (Science Stream)</div>
+            </div>
+            <div class="timeline-item">
+              <h4>10th Board — Durgapur Vidyasagar Model High School</h4>
+              <div class="timeline-date">2020</div>
+              <div class="timeline-detail">81.5%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="achievements-section reveal-right">
+          <h3>Ranks & <span class="gradient-text">Achievements</span></h3>
+          <ul class="achievement-list">
+            <li>
+              <i class="fas fa-trophy"></i>
+              <span>Secured <strong style="color: var(--accent-amber);">19th rank</strong> in WBJEE (JECA) 2025</span>
+            </li>
+            <li>
+              <i class="fas fa-medal"></i>
+              <span>Secured 6th position in 2016 — All over West Bengal Science Examination</span>
+            </li>
+            <li>
+              <i class="fas fa-medal"></i>
+              <span>Secured 5th(J) position in 2017 — All over West Bengal Science Examination</span>
+            </li>
+            <li>
+              <i class="fas fa-certificate"></i>
+              <span>Python (Basic) certificate from HackerRank</span>
+            </li>
+            <li>
+              <i class="fas fa-certificate"></i>
+              <span>MySQL (Intermediate) certificate from HackerRank</span>
+            </li>
+            <li>
+              <i class="fas fa-certificate"></i>
+              <span>Problem Solving (Basic) certificate from HackerRank</span>
+            </li>
+            <li>
+              <i class="fas fa-certificate"></i>
+              <span>Software Engineering Intern certificate from HackerRank</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Download Resume Button -->
+      <div class="resume-download reveal">
+        <a href="files/simple resume 2.pdf" target="_blank" class="btn btn-primary">
+          <i class="fas fa-download"></i> Download Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-social">
+        <h3>Find Me On</h3>
+        <p>Feel free to <span style="color: var(--accent-cyan);">connect</span> with me</p>
+
+        <a href="https://github.com/RRR-STAR" target="_blank" rel="noreferrer" class="social-link" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/sk-md-raihan" target="_blank" rel="noreferrer" class="social-link" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://wa.me/918293602005" target="_blank" rel="noreferrer" class="social-link" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:skmdraihan58@gmail.com" target="_blank" rel="noreferrer" class="social-link" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/greet.js"></script>
+  <script src="js/typewriter.js"></script>
+  <script src="js/app.js"></script>
+
 </body>
 
 </html>
